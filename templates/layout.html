@@ -1,0 +1,17 @@
+<!doctype html>
+<title>Welcome to Flash Flask Message Tutorial</title>
+<style>
+    body{background: wheat;margin: auto;
+    width: 65%;
+    }
+</style>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li style="color:green;font-size:24px">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
